@@ -1,0 +1,27 @@
+{
+	"name": "testtrigger2",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "copypipeline",
+					"type": "PipelineReference"
+				},
+				"parameters": {
+					"filename": "copyfromsql_@{formatDateTime(trigger().outputs.windowStartTime, 'yyyy-MM-dd')}"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Minute",
+				"interval": 1,
+				"startTime": "2019-10-15T09:55:00.000Z",
+				"timeZone": "UTC"
+			}
+		}
+	}
+}
