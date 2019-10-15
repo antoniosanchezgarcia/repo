@@ -41,11 +41,22 @@
 				"outputs": [
 					{
 						"referenceName": "ADLSGen2Dataset",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"filename": {
+								"value": "@pipeline().parameters.filename",
+								"type": "Expression"
+							}
+						}
 					}
 				]
 			}
 		],
+		"parameters": {
+			"filename": {
+				"type": "string"
+			}
+		},
 		"annotations": []
 	}
 }

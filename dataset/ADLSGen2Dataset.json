@@ -15,7 +15,10 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "copyfile",
+				"fileName": {
+					"value": "@dataset().filename",
+					"type": "Expression"
+				},
 				"folderPath": "TestCopy",
 				"fileSystem": "root"
 			},
