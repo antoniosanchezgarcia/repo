@@ -15,7 +15,7 @@
 			"sinks": [
 				{
 					"dataset": {
-						"referenceName": "AzureSqlDWTable1",
+						"referenceName": "AzureSqlDWTable2",
 						"type": "DatasetReference"
 					},
 					"name": "sink1"
