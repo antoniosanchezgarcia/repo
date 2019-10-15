@@ -14,14 +14,14 @@
 		"AzureDataLakeStorage1_properties_typeProperties_url": {
 			"value": "https://adlsg2storunreruclcg3fw.dfs.core.windows.net"
 		},
-		"TumblingWindowTrigger_properties_pipeline_parameters_filename": {
-			"value": "copyfromsql_@{formatDateTime(trigger().outputs.windowStartTime, 'yyyy-MM-dd')}"
-		},
 		"Sftp1_properties_typeProperties_host": {
 			"value": "51.105.132.191"
 		},
 		"Sftp1_properties_typeProperties_userName": {
 			"value": "loaddata"
+		},
+		"trigger1_properties_pipeline_parameters_filename": {
+			"value": "copyfromsql_@{formatDateTime(trigger().outputs.windowStartTime, 'yyyy-MM-dd')}"
 		}
 	}
 }
