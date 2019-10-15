@@ -10,7 +10,6 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "binary.bin",
 				"folderPath": "binary",
 				"fileSystem": "root"
 			}
