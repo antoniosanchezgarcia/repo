@@ -286,6 +286,27 @@
 			]
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/AzureSqlDWTable2')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureSqlDW1",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlDWTable",
+				"schema": [],
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "MovieAggregate"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/AzureSqlDW1')]"
+			]
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/copyfromsftp')]",
 			"type": "Microsoft.DataFactory/factories/pipelines",
 			"apiVersion": "2018-06-01",
@@ -431,7 +452,7 @@
 					"sinks": [
 						{
 							"dataset": {
-								"referenceName": "AzureSqlDWTable1",
+								"referenceName": "AzureSqlDWTable2",
 								"type": "DatasetReference"
 							},
 							"name": "sink1"
@@ -462,7 +483,7 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/moviesdb')]",
-				"[concat(variables('factoryId'), '/datasets/AzureSqlDWTable1')]"
+				"[concat(variables('factoryId'), '/datasets/AzureSqlDWTable2')]"
 			]
 		},
 		{
