@@ -18,6 +18,13 @@
 					"dataflow": {
 						"referenceName": "movies",
 						"type": "DataFlowReference"
+					},
+					"staging": {
+						"linkedService": {
+							"referenceName": "AzureDataLakeStorage1",
+							"type": "LinkedServiceReference"
+						},
+						"folderPath": "root/staging"
 					}
 				}
 			}
