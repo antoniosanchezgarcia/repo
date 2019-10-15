@@ -15,6 +15,10 @@
 			"type": "string",
 			"defaultValue": "https://adlsg2storunreruclcg3fw.dfs.core.windows.net"
 		},
+		"TumblingWindowTrigger_properties_pipeline_parameters_filename": {
+			"type": "string",
+			"defaultValue": "copyfromsql_@{formatDateTime(trigger().outputs.windowStartTime, 'yyyy-MM-dd')}"
+		},
 		"containerUri": {
 			"type": "string",
 			"metadata": "URI to storage account containing linked ARM templates"
@@ -47,6 +51,9 @@
 					},
 					"AzureDataLakeStorage1_properties_typeProperties_url": {
 						"value": "[parameters('AzureDataLakeStorage1_properties_typeProperties_url')]"
+					},
+					"TumblingWindowTrigger_properties_pipeline_parameters_filename": {
+						"value": "[parameters('TumblingWindowTrigger_properties_pipeline_parameters_filename')]"
 					}
 				}
 			},
